@@ -12,9 +12,9 @@ def a_plus_abs_b(a, b):
     5
     """
     if b < 0:
-        f = sub(a, b)
+        f = sub
     else:
-        f = add(a, b)
+        f = add
     return f(a, b)
 
 # Q2
@@ -31,7 +31,7 @@ def two_of_three(a, b, c):
     >>> two_of_three(5, 5, 5)
     50
     """
-    return add(square(max(a, b)), square(max(min(a, b), c)))
+    return add(pow(max(a, b, c), 2), pow(max(min(a, b), min(b, c), min(a, c)), 2));
 
 # Q3
 def largest_factor(n):

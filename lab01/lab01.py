@@ -1,6 +1,5 @@
 """Lab 1: Expressions and Control Structures"""
 
-# Q3
 def both_positive(x, y):
     """Returns True if both x and y are positive.
 
@@ -9,12 +8,8 @@ def both_positive(x, y):
     >>> both_positive(1, 1)
     True
     """
-    if x >= 0 and y >= 0:
-        return True
-    else:
-        return False
+    return x and y > 0 # You can replace this line!
 
-# Q4
 def sum_digits(n):
     """Sum all the digits of n.
 
@@ -24,11 +19,8 @@ def sum_digits(n):
     12
     >>> sum_digits(1234567890)
     45
+    >>> x = sum_digits(123) # make sure that you are using return rather than print
+    >>> x
+    6
     """
     "*** YOUR CODE HERE ***"
-    s = 0;
-    while n / 10 != 0:
-        s += n % 10
-        n = n / 10
-    s += n
-    return s

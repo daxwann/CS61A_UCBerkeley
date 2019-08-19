@@ -1,6 +1,6 @@
 {
     "name": "Lab 1",
-    "endpoint": "cal/cs61a/fa18/lab01",
+    "endpoint": "cal/cs61a/su19/lab01",
     "src": [
         "lab01.py",
         "lab01_extra.py"
@@ -12,10 +12,10 @@
         "lab01_extra.py:double_eights": "doctest",
         "tests/truthiness.py": "ok_test",
         "tests/short_circuiting.py": "ok_test",
-	      "tests/hof.py": "ok_test",
+        "tests/hof.py": "ok_test",
         "tests/what_if.py": "ok_test",
         "tests/control.py": "ok_test",
-	      "tests/hof_extra.py": "ok_test"
+        "tests/hof_extra.py": "ok_test"
     },
     "default_tests": [
         "control",
