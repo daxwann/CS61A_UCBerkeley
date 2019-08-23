@@ -47,4 +47,33 @@ def so_slow(num):
     x = x + 1
   return x / 0
 
-square(so_slow(5)) #Infinite Loop 
+# square(so_slow(5)) #Infinite Loop 
+
+"""
+1.3 Write a function that returns True if a positive integer n is a prime number and False otherwise.
+"""
+
+def is_prime(n):
+  """
+  >>> is_prime(10)
+  False
+  >>> is_prime(7)
+  True
+  """
+  if n == 1:
+    return False
+  elif n == 2:
+    return True
+  elif n % 2 == 0:
+    return False
+  else:
+    i = 3
+    while i <= (n // 2):
+      if n % i == 0:
+        return False
+      i += 2
+    return True
+
+
+
+
