@@ -82,6 +82,16 @@ def is_swap(player_score, opponent_score):
     """
     # BEGIN PROBLEM 4
     "*** YOUR CODE HERE ***"
+    player_left = player_score
+    while player_left > 9:
+      player_left = player_left // 10 
+    
+    opponent_right = opponent_score % 10
+
+    if player_left == opponent_right:
+      return True
+    else:
+      return False
     # END PROBLEM 4
 
 
