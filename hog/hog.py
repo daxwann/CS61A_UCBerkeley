@@ -44,6 +44,13 @@ def free_bacon(score):
     assert score < 100, 'The game should be over.'
     # BEGIN PROBLEM 2
     "*** YOUR CODE HERE ***"
+    onesDigit = score % 10
+    tensDigit = score // 10
+
+    if onesDigit <= tensDigit:
+      return 10 - onesDigit
+    else:
+      return 10 - tensDigit
     # END PROBLEM 2
 
 
