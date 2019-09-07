@@ -132,10 +132,18 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
     # BEGIN PROBLEM 5
     "*** YOUR CODE HERE ***"
     while score0 < goal and score1 < goal:
+      #import pdb; pdb.set_trace()
       if player == 0:
         num_rolls = strategy0(score0, score1)
-        player_score = take_turn(num_rolls, score1, dice)
+        score0 += take_turn(num_rolls, score1, dice)
+        if is_swap(score0, score1):
+          score0, score1 = score1, score0
       else:
+        num_rolls = strategy1(score1, score0)
+        score1 += take_turn(num_rolls, score0, dice)
+        if is_swap(score1, score0):
+          score0, score1 = score1, score0
+      player = other(player)
     # END PROBLEM 5
     # (note that the indentation for the problem 6 prompt (***YOUR CODE HERE***) might be misleading)
     # BEGIN PROBLEM 6
