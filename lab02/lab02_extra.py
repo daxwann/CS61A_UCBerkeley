@@ -66,6 +66,15 @@ def count_cond(condition):
     8
     """
     "*** YOUR CODE HERE ***"
+    def count_fn(n):
+      # import pdb; pdb.set_trace()
+      i, count = 1, 0
+      while i <= n:
+        if condition(n, i):
+          count += 1
+        i += 1
+      return count
+    return count_fn
 
 def cycle(f1, f2, f3):
     """Returns a function that is itself a higher-order function.
