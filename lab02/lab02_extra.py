@@ -103,3 +103,15 @@ def cycle(f1, f2, f3):
     19
     """
     "*** YOUR CODE HERE ***"
+    def set_cycle(n):
+      functions = [f1, f2, f3]
+      i = 0 
+      def add_fn(new, old):
+        return lambda x: new(old(x))
+      do_functions = lambda x: x
+      while i < n:
+        index = i % 3
+        do_functions = add_fn(functions[index], do_functions)
+        i += 1
+      return do_functions
+    return set_cycle
