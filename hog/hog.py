@@ -132,7 +132,6 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
     # BEGIN PROBLEM 5
     "*** YOUR CODE HERE ***"
     while score0 < goal and score1 < goal:
-      #import pdb; pdb.set_trace()
       if player == 0:
         num_rolls = strategy0(score0, score1)
         score0 += take_turn(num_rolls, score1, dice)
@@ -235,6 +234,23 @@ def announce_highest(who, previous_high=0, previous_score=0):
     assert who == 0 or who == 1, 'The who argument should indicate a player.'
     # BEGIN PROBLEM 7
     "*** YOUR CODE HERE ***"
+   
+    def say(score0, score1):
+      #import pdb; pdb.set_trace()
+      if who == 0:
+        diff = score0 - previous_score
+        prev_score = score0
+      else:
+        diff = score1 - previous_score
+        prev_score = score1
+
+      if diff > previous_high:
+        print(f"{diff} point(s)! That's the biggest gain yet for Player {who}")
+        prev_high = diff 
+      else:
+        prev_high = previous_high
+      return announce_highest(who, prev_high, prev_score)
+    return say
     # END PROBLEM 7
 
 
