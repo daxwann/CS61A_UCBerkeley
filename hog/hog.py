@@ -236,7 +236,6 @@ def announce_highest(who, previous_high=0, previous_score=0):
     "*** YOUR CODE HERE ***"
    
     def say(score0, score1):
-      #import pdb; pdb.set_trace()
       if who == 0:
         diff = score0 - previous_score
         prev_score = score0
@@ -377,7 +376,18 @@ def swap_strategy(score, opponent_score, margin=8, num_rolls=4):
     non-beneficial swap. Otherwise, it rolls NUM_ROLLS.
     """
     # BEGIN PROBLEM 11
-    return 4  # Replace this statement
+    free_bacon_points = free_bacon(opponent_score)
+    free_bacon_score = score + free_bacon_points
+    #import pdb; pdb.set_trace()
+    if is_swap(free_bacon_score, opponent_score):
+      if opponent_score >= free_bacon_score:
+        return 0 
+      else:
+        return num_rolls
+
+    if free_bacon_points >= margin:
+      return 0
+    return num_rolls 
     # END PROBLEM 11
 
 
