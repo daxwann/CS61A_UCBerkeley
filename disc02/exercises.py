@@ -45,3 +45,20 @@ all integers 1..i..n where calling cond(i) returns True.
         print(i)
       i += 1
   return check_cond
+
+#   1.7 Write a function and add that takes a one-argument function 
+#       f and a number n as arguments. It should return a function 
+#       that takes one argument, and does the same thing as the function 
+#       f, except also adds n to the result.
+
+def and_add(f, n):
+  """Return a new function. This new function takes an argument x and returns f(x) + n.
+
+  >>> def square(x):
+  ...   return x * x
+  >>> new_square = and_add(square, 3)
+  >>> new_square(4)  # 4 * 4 + 3
+  19
+  """
+
+  return lambda x: f(x) + n
